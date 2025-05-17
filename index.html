@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghost Plugins - Old School RuneScape Plugins</title>
     <style>
-        body {
+        /* Reset and basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #00ADD8; /* Golang Green */
-            color: white;
+            background-color: #1e2630;
+            color: gainsboro;
             text-align: center;
         }
 
+        /* Flex layout for full height */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
         header {
-            background-color: rgba(0, 173, 216, 0.9);
+            background-color: #1e2630;
             padding: 1rem;
         }
 
@@ -32,22 +47,57 @@
             font-size: 1.2rem;
         }
 
+        /* Button container directly below header */
+        .button-container {
+            margin: 1rem auto;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: gainsboro;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #00ADD8;
+            color: gainsboro;
+        }
+
+        .button img {
+            height: 24px;
+            width: 24px;
+            margin-right: 0.5rem;
+        }
+
+        /* Main content to expand */
         .content {
-            margin: 2rem auto;
+            margin: 1rem auto;
             max-width: 800px;
             padding: 1rem;
             background-color: rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            flex: 1;
         }
 
+        /* Sticky footer at the bottom */
         footer {
-            margin-top: 2rem;
-            padding: 1rem;
             background-color: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            margin-top: auto;
         }
 
         footer a {
-            color: white;
+            color: gainsboro;
             text-decoration: none;
         }
 
@@ -63,6 +113,22 @@
         <p>Premium Plugins for Old School RuneScape in the RuneLite Client</p>
     </header>
 
+    <!-- Button Container Below Header -->
+    <div class="button-container">
+        <a href="https://github.com/chsami/microbot" class="button" target="_blank">
+            <img src="assets/microbot_logo.png" alt="Microbot Logo">
+            Client
+        </a>
+        <a href="#" class="button" target="_blank" id="discord-button">
+            <img src="assets/discord_logo.png" alt="Discord Logo">
+            Discord
+        </a>
+        <a href="https://github.com/ghost-plugins" class="button" target="_blank">
+            <img src="assets/github_logo.png" alt="GitHub Logo">
+            GitHub
+        </a>
+    </div>
+
     <div class="content">
         <h2>Welcome to Ghost Plugins</h2>
         <p>Boost your Old School RuneScape experience with our exclusive plugins designed for the RuneLite client.</p>
@@ -73,5 +139,11 @@
         <p>&copy; 2025 Ghost Plugins. All rights reserved.</p>
         <p>Visit our <a href="https://github.com/ghost-plugins">GitHub</a> for more information.</p>
     </footer>
+
+    <script>
+        // Update the Discord button link once the invite link is available
+        const discordButton = document.getElementById('discord-button');
+        discordButton.href = "YOUR_DISCORD_INVITE_LINK";
+    </script>
 </body>
 </html>
